@@ -1,75 +1,40 @@
-// // 
-// let cont = document.querySelector('.container');
-//  console.log(cont.children[1].children[0]);
-//  console.log(cont.children);
-//  console.log(cont.firstElementChild.nextElementSibling.nextElementSibling);
+var arrayOfQuotes = [
+  {
+    "quote": "पर्यटन् पृथिवीं सर्वां, गुणान्वेषणतत्परः।"
+  },
+  {
+    "quote": "हदये सुखसम्पत्तिः पदे पर्यटनं फलम्।"
+  },
+  {
+    "quote": "चरैवेति चरैवेति॥"
+  },
 
-// // console.log(cont.children);
+  {
+    "quote": "यस्मिन्प्रचीर्णे च पुनश्चरन्ति; स वै श्रेष्ठो गच्छत यत्र कामः। "
+  },
 
-// let element = document.createElement('ul');
-// element.id = 'ul1'
-// element.className = 'ulclass'
-//  element.appendChild(li)
-//  let listelement = document.createElement('li');
-//  element.appendChild(element.appendChild(listelement));
-// // e1 = document.querySelector('ul')
-// 
-// 
-// console.log(e1);
-// // 
-// const node = document.createElement("li");
-// const textnode = document.createTextNode("Water");
-// node.appendChild(textnode);
-// document.getElementById("ul1").appendChild(node);
-// let element1 = document.createElement('li','li');
-// element1.innerText = "hello its Tanuj"
-// element.appendChild(element1);
-// console.log(element1);
-// console.log(element);
-// let a = document.querySelector('div.container');
-// // CredentialsContainer.
-// // a.appendChild(element);
-// a.appendChild(element);
+  {
+    "quote": "चरन्ति वसुधां कृत्स्नां वावदूका बहुश्रुताः।"
+  },
 
-// console.log(a)
+  {
+    "quote": " चरन्मार्गान्विजानाति |"
+  },
 
+  {
+    "quote": " आस्ते भग आसीनस्य, ऊध्वर्स्तिष्ठति तिष्ठतः।"
 
-// console.log(listelement)ea
-// 
+  }
+]
 
-// var myname = "ankur";
-// console.log(typeof(myname));
-// var myage = 25 ;
-// console.log(typeof(myage))
+function randomSelector(arrayLength){
+  return Math.floor(Math.random() * arrayLength);
+}
 
-// what is nan ?
-
-// c= "ankur"-"zalaya" ;
-// console.log(c);
-
-//  a = 5
-//  b = '5'
-// console.log( a ===  b);
-
-// var c ;
-// function myname(a,b){
-//  console.log(c= a+b)
-// }
-
-// myname(5,2)
-
-// var myfriends = ['ankur','zalaya','chetan','vranda','tanuj','kriti'];
-
-// for(var i=0; i<myfriends.length ; i++) {
-//     console.log(myfriends[i]);
-// } 
-let str = 'python'
-let links = document.links ;
-console.log(links);
-let href;
-Array.from(links).forEach(function(element){
-    href = element.href;
-    if(href.includes(str)){
-    console.log(href);
-    }
-})
+function generateQuote(){
+  var randomNumber = randomSelector(arrayOfQuotes.length)
+  document.getElementById("quoteOutput").innerHTML = ` Quote :- " ${arrayOfQuotes[randomNumber].quote} "`;
+  // document.getElementById("authorOutput").innerHTML = `Author :- " ${arrayOfQuotes[randomNumber].author} "`;
+  // document.getElementById("quoteOutput").innerHTML = '"' + arrayOfQuotes[randomNumber].quote  + '"';
+  // document.getElementById("authorOutput").innerHTML = '"' + arrayOfQuotes[randomNumber].author  + '"';
+}
